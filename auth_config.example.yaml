@@ -1,0 +1,82 @@
+# Copiare in auth_config.yaml e personalizzare.
+# Le password vanno salvate come hash bcrypt: generarli con
+#   python generate_password_hash.py
+# La chiave del cookie si imposta nel file .env (AUTH_COOKIE_KEY).
+
+credentials:
+  usernames:
+    utente_admin:
+      email: utente_admin@example.com
+      name: Utente Admin
+      password: "HASH_BCRYPT_DA_GENERARE"
+    utente_manager:
+      email: utente_manager@example.com
+      name: Utente Manager
+      password: "HASH_BCRYPT_DA_GENERARE"
+    utente_contabilita:
+      email: utente_contabilita@example.com
+      name: Utente Contabilita
+      password: "HASH_BCRYPT_DA_GENERARE"
+    utente_acquisti:
+      email: utente_acquisti@example.com
+      name: Utente Acquisti
+      password: "HASH_BCRYPT_DA_GENERARE"
+    utente_logistica:
+      email: utente_logistica@example.com
+      name: Utente Logistica
+      password: "HASH_BCRYPT_DA_GENERARE"
+
+cookie:
+  name: analisi_magazzino_cookie
+  expiry_days: 30
+
+preauthorized:
+  emails: []
+
+user_roles:
+  utente_admin: admin
+  utente_manager: manager
+  utente_contabilita: contabilita
+  utente_acquisti: acquisti
+  utente_logistica: logistica
+
+roles_permissions:
+  admin:
+    - view_cards
+    - view_charts
+    - view_monthly
+    - export_data
+    - view_orders
+    - view_article_client_analysis
+
+  manager:
+    - view_cards
+    - view_charts
+    - view_monthly
+    - export_data
+    - view_orders
+    - view_article_client_analysis
+
+  logistica:
+    - view_cards
+    - view_charts
+    - view_monthly
+    - export_data
+    - view_orders
+    - view_article_client_analysis
+
+  contabilita:
+    - view_cards
+    - view_charts
+    - view_monthly
+    - export_data
+    - view_orders
+    - view_article_client_analysis
+
+  acquisti:
+    - view_cards
+    - view_charts
+    - view_monthly
+    - export_data
+    - view_orders
+    - view_article_client_analysis
